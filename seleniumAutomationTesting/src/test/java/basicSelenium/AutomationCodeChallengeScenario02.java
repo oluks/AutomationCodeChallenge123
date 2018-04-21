@@ -6,13 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class AutomationCodeChallengeScenario2 {
+public class AutomationCodeChallengeScenario02 {
 
 	public static void main(String[] args) {
 		
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.get("http://www.seleniumeasy.com/test/input-form-demo.html");
+		driver.get("http://www.seleniumeasy.com/test/");
+		driver.navigate().to("http://www.seleniumeasy.com/test/input-form-demo.html");
 		driver.findElement(By.name("first_name")).sendKeys("David");
 		String FirstNameColor = driver.findElement(By.xpath("//*[@id=\"contact_form\"]/fieldset/div[1]/div/div/span/i")).getCssValue("color");
 		System.out.println("First Name Color after name input is changed to " + FirstNameColor);
